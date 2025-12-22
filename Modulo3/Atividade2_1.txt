@@ -1,0 +1,15 @@
+ALUNO(matricula, nome, endereco, data_nascimento)
+DISCIPLINA(nome, ementa, carga_horária, disc_pre_req)
+  disc_pre_req é chave estrangeira para DISCIPLINA e pode ser NULL;
+DEPARTAMENTO(dep_id, nome, prof_chef_cpf, local)
+  prof_chef_cpf é chave estrangeira para PROFESSOR e é NOT NULL;
+PROFESSOR(cpf, nome, inicio_contrato, depto_id)
+  depto_id é chave estrangeira para DEPARTAMENTO e é NOT NULL;
+AVALIACAO(nota, comentario, data_hora, prof_cpf)
+PROF_CONTATO(contato, prof_cpf)
+  prof_cpf é chave estrangeira para PROFESSOR
+PROF_DISC(nome, prof_cpf)
+  prof_cpf é chave estrangeira para PROFESSOR
+ALUNO_DISC(nome, matricula)
+  nome é chave estrangeira para DISCIPLINA
+  matricula é chave estrangeira para ALUNO
